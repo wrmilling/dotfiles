@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# ~/.zsh/zshrc.d/099.zgen.sh hash: {{ include "dot_zsh/zshrc.d/099.zgen.sh" | sha256sum }}
+
+echo "Linking zsh config"
+rm -f ~/.zshrc
+ln -s ~/.zsh/zshrc ~/.zshrc
+
+cur_shell=`awk -F: -v u="$USER" 'u==$1&&$0=$NF' /etc/passwd`
+if [[ $cur_shell != *"zsh" ]]; then
+  echo "Changing default shell"
+  if [[ -f "/bin/zsh" ]]; then
+    chsh -s /bin/zsh
+  else
+    chsh -s /usr/bin/zsh
+  fi
+fi
+
+echo "Resetting zgen, restart terminal to generate a new save or install plugins"
+rm -f "${HOME}/.zgen/init.zsh"

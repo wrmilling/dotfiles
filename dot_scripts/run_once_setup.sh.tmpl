@@ -10,13 +10,3 @@ sudo pacman -S zsh vim tmux htop git base-devel
   {{- end -}}
 {{ end }}
 
-echo "Running individual application setup scripts"
-
-# Run VIM setup
-~/.vim/install.sh
-
-# Run ZSH Setup
-~/.zsh/install.sh
-
-# Run tmux install
-~/.config/tmux/install.sh
