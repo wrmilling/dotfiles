@@ -1,5 +1,0 @@
-{{ if (eq .chezmoi.os "darwin") }}
-export PATH="$HOME/.yadm/darwin-bin/:$PATH"
-{{ else if (eq .chezmoi.os "linux") }}
-export PATH="$HOME/.yadm/linux-bin/:$PATH"
-{{ end }}
