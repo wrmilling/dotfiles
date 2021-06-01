@@ -1,4 +1,5 @@
-# Linux Brew Setup
+{{ if (eq .chezmoi.os "linux") }}
 if [ -d "/home/linuxbrew" ]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
+{{ end }}
