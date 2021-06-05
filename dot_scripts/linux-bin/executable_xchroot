@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Mount all the fun directories
+for f in {proc,sys,dev}; do sudo mount --bind /${f} /mnt/NVMe/virtualization/chroots/debian-steam/${f}; done 
+
+# Give us access to X11 
+sudo mount --bind /tmp/.X11-unix /mnt/NVMe/virtualization/chroots/debian-steam/tmp/.X11-unix
+xauth extract - serenity.homelab.tokyo/unix:0 | xauth -f /mnt/NVMe/virtualization/chroots/debian-steam/home/w4cbe/.Xauthority merge -
+
+# Start chroot
+sudo chroot /mnt/NVMe/virtualization/chroots/debian-steam su - w4cbe
