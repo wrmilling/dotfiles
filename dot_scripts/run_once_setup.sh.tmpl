@@ -7,10 +7,12 @@ sudo apt-get install -y zsh vim tmux xclip htop git build-essential
   {{ else if (or (eq .chezmoi.osRelease.id "manjaro") (eq .chezmoi.osRelease.id "arch" ) ) }}
 sudo pacman -S zsh vim tmux htop git xclip base-devel
   {{ end }}
- 
+
+  {{ if (eq .chezmoi.arch "amd64") }} 
 if [[ ! -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
   echo "Installing linux brew"  
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+  {{ end }}
 {{ end }}
 
