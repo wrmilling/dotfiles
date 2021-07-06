@@ -1,6 +1,10 @@
 [user]
   name = Winston R. Milling
+{{- if (eq .chezmoi.os "darwin") }}
+  email = Winston@homedepot.com
+{{- else }}
   email = Winston@Milli.ng
+{{- end }}
   signingkey = 0xA44A3B1758373973
 [alias]
   st = status
