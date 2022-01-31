@@ -21,7 +21,7 @@ if [[ ! -f "/usr/local/bin/brew" ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   
   echo "Installing some brew apps"
-  brew install vim tmux wget gnupg@2.2 pinentry-mac temurin spectacle homebrew/cask-fonts/font-sauce-code-pro-nerd-font nvm rbenv
+  brew install vim tmux wget gnupg@2.2 pinentry-mac homebrew/cask-fonts/font-sauce-code-pro-nerd-font nvm rbenv
   brew link gnupg@2.2
 fi
 {{ end }}
