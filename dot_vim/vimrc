@@ -3,39 +3,39 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
 let g:vundle_default_git_proto = 'git'
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+
+call plug#begin()
 
 " Theme Plugins
-Plugin 'crusoexia/vim-monokai'
-Plugin 'itchyny/lightline.vim'
-Plugin 'reedes/vim-colors-pencil'
+Plug 'crusoexia/vim-monokai'
+Plug 'itchyny/lightline.vim'
+Plug 'reedes/vim-colors-pencil'
 
 " General Editing
-Plugin 'junegunn/goyo.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'iamcco/markdown-preview.nvim'
+Plug 'junegunn/goyo.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim'
 
 " Language Plugins
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 " Searching
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
 " Navigation
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " Tool Integration
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 " Change color scheme when you enter or exit goyo 
