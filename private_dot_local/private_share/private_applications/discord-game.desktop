@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Discord (Game)
+StartupWMClass=discord-game
+Comment=All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
+GenericName=Internet Messenger
+Exec=/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-game; export TMPDIR=~/.config/discord-game/tmp; /usr/share/discord/Discord"
+Icon=discord
+Type=Application
+Categories=Network;InstantMessaging;
+Path=/usr/bin
