@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# ~/.vim/vimrc hash: {{ include "dot_vim/vimrc" | sha256sum }}
-
 echo "Linking vim config"
 rm -f "${HOME}/.vimrc"
 ln -s "${HOME}/.vim/vimrc" "${HOME}/.vimrc"
