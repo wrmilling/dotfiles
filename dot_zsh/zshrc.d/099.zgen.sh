@@ -29,7 +29,7 @@ if ! zgen saved; then
   # 3rd Party Plugins
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-completions
-  zgen load chriskempson/base16-shell
+  zgen load wrmilling/base16-shell
   zgen load martinlindhe/base16-iterm2
 
   # After Custom Plugins Load
