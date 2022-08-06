@@ -21,6 +21,7 @@ Plug 'iamcco/markdown-preview.nvim'
 
 " Language Plugins
 Plug 'fatih/vim-go'
+Plug 'LnL7/vim-nix'
 
 " Searching
 Plug 'mileszs/ack.vim'
