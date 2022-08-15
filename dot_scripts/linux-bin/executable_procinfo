@@ -23,9 +23,13 @@ chg_power_now=$(echo "scale=2;$chg_current_now * $chg_voltage_now / $power_divis
 # Is the barrel plug being used. We don't have current/voltage for barrel.
 barrel_charging=$(cat /sys/class/power_supply/dc-charger/online)
 
+# Current battery level
+bat_current_level=$(cat /sys/class/power_supply/cw2015-battery/capacity)
+
 # Print everything out
 echo CPU Temp: ${cpu::2}C '|' A53 Freq: ${a53freq}Ghz '|' A72 Freq: ${a72freq}Ghz 
 echo GPU Temp: ${gpu::2}C '|' GPU Freq: ${gpufreq}Mhz
+echo Battery Charge Level is ${bat_current_level}%
 
 if [[ "$bat_power_now" != "0" ]]; then
   echo Battery Discharging at ${bat_power_now}W
