@@ -3,7 +3,11 @@ Name=Discord (Name)
 StartupWMClass=discord-name
 Comment=All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
 GenericName=Internet Messenger
+{{ if (eq .chezmoi.arch "arm64") -}}
+Exec=/run/current-system/sw/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-name; export TMPDIR=~/.config/discord-name/tmp; /run/current-system/sw/bin/armcord"
+{{ else -}}
 Exec=/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-name; export TMPDIR=~/.config/discord-name/tmp; /usr/share/discord/Discord"
+{{ end -}}
 Icon=discord
 Type=Application
 Categories=Network;InstantMessaging;
