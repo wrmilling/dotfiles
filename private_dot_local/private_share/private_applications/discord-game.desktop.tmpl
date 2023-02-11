@@ -6,7 +6,7 @@ GenericName=Internet Messenger
 {{ if (eq .chezmoi.arch "arm64") }}
 Exec=/run/current-system/sw/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-game; export TMPDIR=~/.config/discord-game/tmp; /run/current-system/sw/bin/armcord"
 {{ else }}
-Exec=/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-game; export TMPDIR=~/.config/discord-game/tmp; /usr/share/discord/Discord"
+Exec=/run/current-system/sw/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-game; export TMPDIR=~/.config/discord-game/tmp; /run/current-system/sw/bin/discord"
 {{ end }}
 Icon=discord
 Type=Application
