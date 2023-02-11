@@ -11,6 +11,7 @@ display_type = "memory"
 format_mem = "{mem_used_percents}"
 format_swap = "{swap_used_percents}"
 
+{{ if (eq .chezmoi.arch "arm64") }}
 [[block]]
 block = "temperature"
 collapsed = false
@@ -24,6 +25,21 @@ collapsed = false
 interval = 10
 format = "{average}"
 chip = "gpu_thermal-*"
+{{ else }}
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 2
+format = "{average}"
+chip = "coretemp-isa-0000"
+
+[[block]]
+block = "nvidia_gpu"
+gpu_id = 0
+interval = 2
+show_temperature = true
+label = "GPU"
+{{ end }}
 
 [[block]]
 block = "disk_space"
@@ -36,6 +52,7 @@ warning = 20.0
 alert = 10.0
 format = "{icon} {available}"
 
+{{ if (eq .chezmoi.arch "arm64") }}
 [[block]]
 block = "disk_space"
 path = "/mnt/NVMe"
@@ -46,10 +63,11 @@ interval = 20
 warning = 20.0
 alert = 10.0
 format = "{icon} {available}"
+{{ end }}
 
 [[block]]
 block = "battery"
-device = "cw2015-battery"
+device = "BAT0"
 interval = 10
 
 [[block]]
