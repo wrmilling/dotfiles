@@ -3,7 +3,7 @@
 {{ if (eq .chezmoi.os "linux") }}
 echo "Installing some basic packages"
   {{ if (or (eq .chezmoi.osRelease.id "pop") (eq .chezmoi.osRelease.id "ubuntu") ) }}
-sudo apt-get update && sudo apt-get install -y zsh vim tmux xclip htop git build-essential
+sudo apt-get update && sudo apt-get install -y zsh vim tmux xclip btop git build-essential
   {{ else if (or (eq .chezmoi.osRelease.id "manjaro") (eq .chezmoi.osRelease.id "arch" ) ) }}
 sudo pacman -Syy && sudo pacman -S zsh vim tmux htop git xclip base-devel
   {{ end }}
