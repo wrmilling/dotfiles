@@ -5,8 +5,10 @@ Comment=All-in-one voice and text chat for gamers that's free, secure, and works
 GenericName=Internet Messenger
 {{ if (eq .chezmoi.arch "arm64") -}}
 Exec=/run/current-system/sw/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-name; export TMPDIR=~/.config/discord-name/tmp; /run/current-system/sw/bin/armcord"
-{{ else -}}
+{{ else if (eq .chezmoi.osRelease.id "nixos") -}}
 Exec=/run/current-system/sw/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-name; export TMPDIR=~/.config/discord-name/tmp; /run/current-system/sw/bin/discord"
+{{ else -}}
+Exec=/bin/bash -c "export XDG_CONFIG_HOME=~/.config/discord-name; export TMPDIR=~/.config/discord-name/tmp; /usr/bin/discord"
 {{ end -}}
 Icon=discord
 Type=Application
