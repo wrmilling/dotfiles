@@ -13,6 +13,8 @@ if [[ ! -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
   echo "Installing linux brew"  
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+  brew install kubectl kubectx k9s 
   {{ end }}
 {{ end }}
 {{ if (eq .chezmoi.os "darwin") }}
