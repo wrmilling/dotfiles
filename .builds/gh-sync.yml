@@ -5,7 +5,11 @@ sources:
 - https://git.sr.ht/~wrmilling/dotfiles
 tasks:
 - push: |
-    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+		# Ensure we are on the main branch, exit build if not
     cd dotfiles
+    git diff --exit-code origin/main || complete-build
+
+    # Push copy of code to GitHub
+    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
     git remote add github git@github.com:wrmilling/dotfiles.git
     git push github main
