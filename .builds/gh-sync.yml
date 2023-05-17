@@ -1,0 +1,9 @@
+image: alpine/edge
+secrets:
+- 09eacbef-e0aa-4dc7-b98d-d694f768f7c3
+sources:
+- https://git.sr.ht/~wrmilling/dotfiles
+tasks:
+- push: |
+    git remote add github git@github.com:wrmilling/dotfiles.git
+    git push github main
