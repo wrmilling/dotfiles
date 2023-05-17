@@ -5,5 +5,7 @@ sources:
 - https://git.sr.ht/~wrmilling/dotfiles
 tasks:
 - push: |
+    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+    cd dotfiles
     git remote add github git@github.com:wrmilling/dotfiles.git
     git push github main
