@@ -5,7 +5,7 @@ sources:
 - https://git.sr.ht/~wrmilling/dotfiles
 tasks:
 - push: |
-		# Ensure we are on the main branch, exit build if not
+    # Ensure we are on the main branch, exit build if not
     cd dotfiles
     git diff --exit-code origin/main || complete-build
 
