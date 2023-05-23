@@ -32,4 +32,11 @@
   ff = only
 [commit]
   gpgsign = true
+{{- if (ne .chezmoi.os "darwin") }}
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpuser = winston@wrmilling.com
+  smtpencryption = tls
+  smtpserverport = 587
+{{- end }}
 
