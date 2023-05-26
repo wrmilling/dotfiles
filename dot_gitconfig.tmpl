@@ -33,6 +33,8 @@
 [commit]
   gpgsign = true
 {{- if (ne .chezmoi.os "darwin") }}
+[credential]
+  credentialStore = gpg
 [sendemail]
   smtpserver = smtp.gmail.com
   smtpuser = winston@wrmilling.com
