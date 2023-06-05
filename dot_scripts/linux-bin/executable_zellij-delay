@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Delay start for i3wm bug
+sleep 0.01
+
+zellij

@@ -21,5 +21,5 @@ shell:
   program: /bin/sh
   args:
     - -c
-    - tmux
+    - /home/w4cbe/.scripts/linux-bin/zellij-delay
 
