@@ -9,5 +9,5 @@ pinentry-program /usr/local/bin/pinentry-mac
 {{ else if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "pop")) }}
 pinentry-program /usr/bin/pinentry-gnome3
 {{ else }}
-pinentry-program /run/current-system/sw/bin/pinentry-curses
+pinentry-program /run/current-system/sw/bin/pinentry-rofi
 {{ end }}
