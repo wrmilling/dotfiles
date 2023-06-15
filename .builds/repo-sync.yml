@@ -1,6 +1,6 @@
 image: alpine/edge
 secrets:
-- 09eacbef-e0aa-4dc7-b98d-d694f768f7c3
+- f09972ce-2dc5-4713-8096-f675a285030c
 sources:
 - https://git.sr.ht/~wrmilling/dotfiles
 tasks:
@@ -8,6 +8,11 @@ tasks:
     # Ensure we are on the main branch, exit build if not
     cd dotfiles
     git diff -s --exit-code origin/main || complete-build
+
+    # Push copy of code to GitHub
+    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+    git remote add github git@github.com:wrmilling/dotfiles.git
+    git push github main
 
     # Push copy of code to GitHub
     ssh-keyscan -H github.com >> ~/.ssh/known_hosts
